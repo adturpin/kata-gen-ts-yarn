@@ -122,7 +122,7 @@ echo '{
      "forceConsistentCasingInFileNames": true,
      "outDir": "./dist",
      "rootDir": "./",
-     "types": ["vitest/globals"]
+     "types": []
    },
    "include": ["src", "tests"]
  }' >  tsconfig.json
@@ -144,7 +144,8 @@ Dans `package.json`, ajoute ou modifie :
 
 ```json
 "scripts": {
-  "test": "vitest run --coverage"
+  "test": "vitest",
+  "test:coverage": "vitest run --coverage"
 }
 ```
 
