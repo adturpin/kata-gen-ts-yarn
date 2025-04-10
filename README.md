@@ -4,6 +4,17 @@ Ce projet est une base propre pour démarrer un développement TypeScript avec Y
 
 ---
 
+## 🔗 Liens utiles
+
+- [Yarn Berry (v4)](https://yarnpkg.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vitest (tests unitaires)](https://vitest.dev/)
+- [ESLint (analyse statique)](https://eslint.org/)
+- [Prettier (formatage de code)](https://prettier.io/)
+
+
+---
+
 ## 🧰 Prérequis
 
 - Node.js >= 16.9
@@ -117,12 +128,115 @@ yarn test
 }
 ```
 
+## 🧪 Générer un rapport de couverture de test
+
+Vitest permet de générer un rapport de **coverage** (couverture de code).
+
+### ▶️ 1. Ajouter la dépendance
+
+```bash
+yarn add -D @vitest/coverage-v8
+```
+
+### ▶️ 2. Modifier le script de test
+
+Dans `package.json`, ajoute ou modifie :
+
+```json
+"scripts": {
+  "test": "vitest run --coverage"
+}
+```
+
+### ▶️ 3. Lancer les tests avec coverage
+
+```bash
+yarn test
+```
+
+Le rapport sera généré dans le dossier `coverage/` (par défaut en format text, HTML, lcov…).
+
+Tu peux ouvrir `coverage/index.html` dans ton navigateur pour une vue visuelle.
+
 ---
 
-## 🔗 Liens utiles
+## 🧹 Ajouter ESLint et Prettier
 
-- [Yarn Berry (v4)](https://yarnpkg.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vitest (tests unitaires)](https://vitest.dev/)
-- [ESLint (analyse statique)](https://eslint.org/)
-- [Prettier (formatage de code)](https://prettier.io/)
+Pour garantir un code propre et cohérent, on ajoute **ESLint** pour la qualité du code et **Prettier** pour le formatage automatique.
+
+### ▶️ 1. Installer ESLint
+
+```bash
+yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+```
+
+### ▶️ 2. Initialiser la configuration ESLint
+
+```bash
+npx eslint --init
+```
+
+Réponds comme suit :
+- ❓ Comment voulez-vous utiliser ESLint ? `To check syntax, find problems, and enforce code style`
+- ❓ Quel type de modules ? `JavaScript modules (import/export)`
+- ❓ Framework : `None of these`
+- ❓ TypeScript ? `Yes`
+- ❓ Où s'exécutera ton code ? `Node`
+- ❓ Format du fichier de config ? `JSON` ou `YAML` selon ta préférence
+
+### ▶️ 3. Exemple de configuration `.eslintrc.json`
+
+```json
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["@typescript-eslint"],
+  "env": {
+    "node": true,
+    "es2020": true
+  }
+}
+```
+
+---
+
+### 🧼 4. Ajouter Prettier
+
+```bash
+yarn add -D prettier eslint-config-prettier
+```
+
+### ▶️ 5. Ajouter un fichier `.prettierrc`
+
+```json
+{
+  "semi": true,
+  "singleQuote": true,
+  "printWidth": 80,
+  "tabWidth": 2
+}
+```
+
+---
+
+### 🧪 6. Scripts dans `package.json`
+
+```json
+"scripts": {
+  "lint": "eslint . --ext .ts",
+  "format": "prettier --write ."
+}
+```
+
+---
+
+### ✅ Lancer les commandes
+
+```bash
+yarn lint     # Vérifie les erreurs de code
+yarn format   # Formate automatiquement le code
+```
+
