@@ -1,38 +1,83 @@
-# kata-gen-ts-yarn
+# 📦 Projet TypeScript + Yarn + Vitest
+
+Ce projet est une base propre pour démarrer un développement TypeScript avec Yarn Berry (v4) et des tests unitaires via Vitest.
+
+---
+
+## 🧰 Prérequis
+
+- Node.js >= 16.9
+- Corepack activé :
+  
+```bash
+corepack enable
+corepack prepare yarn@stable --activate
+```
+
+---
+
+## 🚀 Installation
 
 ```bash
+yarn install
+```
 
-# 📦 1. Initialiser le projet avec Yarn
+---
+
+## ⚙️ Création du projet
+
+### 📁 1. Créer le dossier du projet
+
+```bash
+mkdir mon-projet-ts
+cd mon-projet-ts
+```
+
+### 📦 2. Initialiser le projet avec Yarn
+
+```bash
 yarn init -y
 ```
+
+### 🧠 3. Ajouter TypeScript
+
 ```bash
-# 🧠 2. Ajouter TypeScript
 yarn add -D typescript
 npx tsc --init
 ```
+
+### 🧩 4. Ajouter les types de Node.js
+
 ```bash
-# 🧩 3. Ajouter les types de Node.js
 yarn add -D @types/node
 ```
+
+### 🧪 5. Ajouter Vitest pour les tests unitaires
+
 ```bash
-# 🧪 4. Ajouter Vitest pour les tests unitaires
 yarn add -D vitest @vitest/globals
 ```
-```bash
-# 📝 5. Ajouter le script de test dans package.json
-# Ouvre package.json et remplace ou ajoute :
-# "scripts": {
-#   "test": "vitest"
-# }
+
+### 📝 6. Ajouter le script de test dans `package.json`
+
+```json
+"scripts": {
+  "test": "vitest"
+}
 ```
+
+### 📁 7. Créer la structure de base
+
 ```bash
-# 📁 6. Créer la structure de base
-mkdir src tests
+mkdir src
+mkdir tests
+```
 
-# Créer un fichier avec une fonction simple à tester
+```bash
 echo "export function sum(a: number, b: number) { return a + b; }" > src/sum.ts
+```
 
-# Créer le test correspondant
+```bash
 echo "import { describe, it, expect } from 'vitest';
 import { sum } from '../src/sum';
 
@@ -43,7 +88,41 @@ describe('sum', () => {
 });
 " > tests/sum.test.ts
 ```
+
+### ▶️ 8. Lancer les tests
+
 ```bash
-# ▶️ 7. Lancer les tests
 yarn test
 ```
+
+---
+
+## 🔧 tsconfig.json recommandé
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "types": ["vitest/globals"]
+  },
+  "include": ["src", "tests"]
+}
+```
+
+---
+
+## 🔗 Liens utiles
+
+- [Yarn Berry (v4)](https://yarnpkg.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vitest (tests unitaires)](https://vitest.dev/)
+- [ESLint (analyse statique)](https://eslint.org/)
+- [Prettier (formatage de code)](https://prettier.io/)
