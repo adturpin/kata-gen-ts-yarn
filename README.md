@@ -66,7 +66,7 @@ yarn add -D @types/node
 ### 🧪 5. Ajouter Vitest pour les tests unitaires
 
 ```bash
-yarn add -D vitest @vitest/globals
+yarn add -D vitest
 ```
 
 ### 📝 6. Ajouter le script de test dans `package.json`
