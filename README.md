@@ -112,20 +112,20 @@ yarn test
 
 ```json
 echo '{
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "rootDir": "./",
-    "types": ["vitest/globals"]
-  },
-  "include": ["src", "tests"]
-}' >  tsconfig.json
+   "compilerOptions": {
+     "target": "ES2020",
+     "module": "ESNext",
+     "moduleResolution": "Node",
+     "esModuleInterop": true,
+     "strict": true,
+     "skipLibCheck": true,
+     "forceConsistentCasingInFileNames": true,
+     "outDir": "./dist",
+     "rootDir": "./",
+     "types": ["vitest/globals"]
+   },
+   "include": ["src", "tests"]
+ }' >  tsconfig.json
 ```
 
 ## 🧪 Générer un rapport de couverture de test
