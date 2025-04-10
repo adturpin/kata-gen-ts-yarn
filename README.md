@@ -111,7 +111,7 @@ yarn test
 ## 🔧 tsconfig.json recommandé
 
 ```json
-{
+echo "{
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
@@ -125,7 +125,7 @@ yarn test
     "types": ["vitest/globals"]
   },
   "include": ["src", "tests"]
-}
+}" >  tsconfig.json
 ```
 
 ## 🧪 Générer un rapport de couverture de test
