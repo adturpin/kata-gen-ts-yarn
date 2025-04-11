@@ -52,7 +52,7 @@ yarn init -y
 
 ```bash
 yarn add -D typescript
-npx tsc --init
+yarn tsc --init
 ```
 
 ### 🧩 4. Ajouter les types de Node.js
