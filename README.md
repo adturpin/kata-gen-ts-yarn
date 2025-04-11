@@ -25,9 +25,7 @@ corepack enable
 corepack prepare yarn@stable --activate
 ```
 
----
-
-## 🚀 Installation
+### 🚀 Installation
 
 ```bash
 yarn install
@@ -40,8 +38,8 @@ yarn install
 ### 📁 1. Créer le dossier du projet
 
 ```bash
-mkdir mon-projet-ts
-cd mon-projet-ts
+mkdir mon-kata-ts
+cd mon-kata-ts
 ```
 
 ### 📦 2. Initialiser le projet avec Yarn
